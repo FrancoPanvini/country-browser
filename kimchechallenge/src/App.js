@@ -13,7 +13,7 @@ import { initialState, reducer } from "./reducer/index";
 export const GlobalContext = React.createContext();
 
 const client = new ApolloClient({
-  uri: "https://48p1r2roz4.sse.codesandbox.io",
+  uri: "https://countries.trevorblades.com/",
 });
 
 const App = () => {
