@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const CardContainer = styled.div`
   width: 20rem;
-  height: 25rem;
+  height: 7rem;
   padding: 1rem;
+  margin: 1rem;
 
   background-color: var(--card-color);
   border: 1px solid var(--font-color);
@@ -13,4 +14,6 @@ export const CardContainer = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+
+  text-align: center;
 `;
