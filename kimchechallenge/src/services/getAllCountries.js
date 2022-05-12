@@ -3,7 +3,6 @@ import { gql } from "apollo-boost";
 export const GET_COUNTRIES_BY_CONTINENT = gql`
   query {
     continents {
-      code
       name
       countries {
         code
@@ -12,8 +11,22 @@ export const GET_COUNTRIES_BY_CONTINENT = gql`
         native
         phone
         capital
-        currency
-        emojiU
+      }
+    }
+  }
+`;
+
+export const GET_COUNTRIES = gql`
+  query {
+    countries {
+      code
+      name
+      emoji
+      native
+      phone
+      capital
+      languages {
+        name
       }
     }
   }
