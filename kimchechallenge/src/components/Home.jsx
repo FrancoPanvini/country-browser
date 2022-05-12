@@ -3,6 +3,7 @@ import React from "react";
 //? COMPONENTS
 import CountryDisplayer from "./CountryDisplayer";
 import OrderButton from "./OrderButton";
+import SearchBar from "./SearchBar";
 
 //? STYLES
 import { HomeContainer } from "./styles/home.SC";
@@ -12,7 +13,7 @@ function Home() {
     <HomeContainer>
       <h1>Country Browser</h1>
       <h4>Which country are you looking for?</h4>
-      <input type="search" />
+      <SearchBar />
       <h4>Group by?</h4>
       <div>
         <OrderButton value="continent" text="Continent" />

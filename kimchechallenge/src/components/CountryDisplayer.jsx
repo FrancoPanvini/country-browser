@@ -18,7 +18,7 @@ function CountryDisplayer() {
   const globalContext = useContext(GlobalContext);
   //* Obtengo los countries y el order del state
   const order = globalContext.state.order;
-  const items = globalContext.state.data;
+  const items = globalContext.state.filteredData;
 
   //* Obtengo los countries del graph, los almaceno en el state y seteo una respuesta para loading y para error
   const { loading, error, data, refetch } = useQuery(order === "continent" ? GET_COUNTRIES_BY_CONTINENT : GET_COUNTRIES);
@@ -46,7 +46,7 @@ function CountryDisplayer() {
       orderData = Object.keys(orderData)
         .sort()
         .map(language => ({ name: language, countries: orderData[language] }));
-        
+
       orderData && globalContext.dispatch({ type: actionsTypes.SET_DATA, payload: orderData });
     }
 
