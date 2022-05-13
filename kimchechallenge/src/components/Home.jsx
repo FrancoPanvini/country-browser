@@ -6,7 +6,7 @@ import OrderButton from "./OrderButton";
 import SearchBar from "./SearchBar";
 
 //? STYLES
-import { HomeContainer,Title } from "./styles/home.SC";
+import { HomeContainer,Title,Order } from "./styles/home.SC";
 
 function Home() {
   return (
@@ -15,10 +15,10 @@ function Home() {
       <h4>Which country are you looking for?</h4>
       <SearchBar />
       <h4>Group by?</h4>
-      <div>
+      <Order>
         <OrderButton value="continent" text="Continent" />
         <OrderButton value="language" text="Language" />
-      </div>
+      </Order>
       <CountryDisplayer />
     </HomeContainer>
   );
