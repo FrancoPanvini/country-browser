@@ -5,7 +5,7 @@ import { GlobalContext } from "../App";
 import { actionsTypes } from "../reducer/index";
 
 //? STYLES
-import {InputSearch} from "./styles/searchBar.SC"
+import { InputSearch } from "./styles/searchBar.SC";
 
 function SearchBar() {
   const globalContext = useContext(GlobalContext);
@@ -28,9 +28,13 @@ function SearchBar() {
         };
       });
       filteredData = filteredData.filter(item => item.countries.length > 0);
-      console.log(filteredData);
+      //* Si no hay resultados seteo una respuesta
+      filteredData = filteredData.length === 0 ? [{ name: "No results", countries: [] }] : filteredData;
+      
       globalContext.dispatch({ type: actionsTypes.SET_FILTERED_DATA, payload: filteredData });
     }
+
+    //* Cuando el SearchBar se vacia, se resetea el state filtrado a toda la data
     if (data.length > 0 && searchInput.length === 0) {
       globalContext.dispatch({ type: actionsTypes.SET_FILTERED_DATA, payload: data });
     }

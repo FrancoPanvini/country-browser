@@ -21,7 +21,7 @@ function CountryDisplayer() {
   const order = globalContext.state.order;
   const items = globalContext.state.filteredData;
 
-  //* Obtengo los countries del graph, los almaceno en el state y seteo una respuesta para loading y para error
+  //* Obtengo los countries del graph 
   const { loading, error, data, refetch } = useQuery(order === "continent" ? GET_COUNTRIES_BY_CONTINENT : GET_COUNTRIES);
 
   useEffect(() => {
@@ -30,6 +30,7 @@ function CountryDisplayer() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [order]);
 
+  //* Almaceno los datos en el state 
   useEffect(() => {
     if (order === "continent") {
       data && globalContext.dispatch({ type: actionsTypes.SET_DATA, payload: data.continents });
@@ -53,6 +54,8 @@ function CountryDisplayer() {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data, order]);
+
+  //* Seteo una respuesta para loading y para error
   if (loading) return <Spinner />;
   if (error) return `Error! ${error.message}`;
 
