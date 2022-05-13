@@ -60,7 +60,7 @@ function CountryDisplayer() {
       {items &&
         items.map(item => {
           return (
-            <div key={item.name}>
+            <ItemContainer key={item.name}>
               <h1>{item.name}</h1>
               <CardContainer>
                 {item.countries.map(country => {
@@ -77,7 +77,7 @@ function CountryDisplayer() {
                   );
                 })}
               </CardContainer>
-            </div>
+            </ItemContainer>
           );
         })}
     </ItemContainer>

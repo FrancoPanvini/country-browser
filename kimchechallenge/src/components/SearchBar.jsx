@@ -4,6 +4,9 @@ import React, { useState, useEffect, useContext } from "react";
 import { GlobalContext } from "../App";
 import { actionsTypes } from "../reducer/index";
 
+//? STYLES
+import {InputSearch} from "./styles/searchBar.SC"
+
 function SearchBar() {
   const globalContext = useContext(GlobalContext);
   const data = globalContext.state.data;
@@ -34,7 +37,7 @@ function SearchBar() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchInput, data]);
 
-  return <input type="search" placeholder="..." onChange={handleChange} value={searchInput} />;
+  return <InputSearch type="search" placeholder="..." onChange={handleChange} value={searchInput} />;
 }
 
 export default SearchBar;

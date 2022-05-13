@@ -6,12 +6,12 @@ import OrderButton from "./OrderButton";
 import SearchBar from "./SearchBar";
 
 //? STYLES
-import { HomeContainer } from "./styles/home.SC";
+import { HomeContainer,Title } from "./styles/home.SC";
 
 function Home() {
   return (
     <HomeContainer>
-      <h1>Country Browser</h1>
+      <Title>Country Browser</Title>
       <h4>Which country are you looking for?</h4>
       <SearchBar />
       <h4>Group by?</h4>
