@@ -3,6 +3,7 @@ import { useQuery } from "@apollo/react-hooks";
 
 //? COMPONENTS
 import CountryCard from "./CountryCard";
+import Spinner from "./Spinner";
 
 //?SERVICES
 import { GET_COUNTRIES_BY_CONTINENT, GET_COUNTRIES } from "../services/getAllCountries";
@@ -52,7 +53,7 @@ function CountryDisplayer() {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data, order]);
-  if (loading) return "Loading...";
+  if (loading) return <Spinner />;
   if (error) return `Error! ${error.message}`;
 
   return (
