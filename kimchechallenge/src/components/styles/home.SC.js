@@ -13,3 +13,7 @@ export const HomeContainer = styled.div`
 export const Title = styled.h1`
   margin-bottom: 1rem;
 `;
+
+export const Order = styled.div`
+  height: 5rem;
+`;
