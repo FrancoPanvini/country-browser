@@ -1,7 +1,21 @@
 # Desafío para Software Engineers
 
-Nombre postulante: [TU NOMBRE]
-Link a la app en producción: [LINK DEL DEPLOY]
+- Nombre postulante: Franco Panvini
+- Link a la app en producción: [Country browser](https://kimchechallenge-iid2s36lc-francopanvini.vercel.app/)
+
+## Pregunta abierta
+"La tabla que contiene la información correspondiente a la asistencia diaria de un niño en un colegio tiene 90 millones de filas. Todas las tablas del sistema existen en la misma BDD en MySQL. La lógica del backend que actualiza la información correspondiente al pasar la asistencia tiene un tiempo de servicio p95 de 10 segundos. El equipo está interesado en bajar este tiempo para mejorar la experiencia del usuario (y porque nos gusta pensar en Kimche como un Ferrari). ¿Qué propondrías para enfrentar el problema? Esta pregunta es abierta, no hay respuestas malas. Puedes proponer arquitectura, tecnologías, diseño, etc."
+
+Para lograr disminuir el tiempo de servicio existen varios puntos sobre los que sería posible trabajar. Dependiendo el caso puede ser conveniente trabajar primero en uno o en otro. 
+
+- Optimizar la DB evaluando si tiene una estructura correcta normalizada. Si es posible indexar la misma y particionar las tablas para logar una estrutura tipo HashTable . Considerar la posibilidad de almecenar cierta data con otra estuctura por ejemplo orientado a grafos,etc.
+- Revisar las lógicas de las queries, para controlar que no exista código innecesario o que la lógica tenga en cuenta la performance. Evaluar que no exista overfetching, que solicite data no necesaria en este punto o underfethcing que obligue a utilizar 2 queries distintas.
+- Utilizar caché cada vez que se pueda. Para esto se pueden utilizar otras tenologías como Redis
+- Considerar la posibilidad de reetructurar el servidor a una estructura tipo GraphQL, de modo de permitir que los clientes brinden y consulten exclusivamente la información necesitada para el request necesario-
+- Evaluar que el servicio de hosting sea el indicado
+
+Seguramente existan más alternativas, éstas son solo algunas.
+
 
 ## Instrucciones
 
